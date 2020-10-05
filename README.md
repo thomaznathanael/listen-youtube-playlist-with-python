@@ -1,4 +1,4 @@
-# Listen-youtube-playlist-with-python
+# Listen Youtube Playlist With Python
 This is an example of how to listen music from a youtube playlist.
 
 ## Installation
