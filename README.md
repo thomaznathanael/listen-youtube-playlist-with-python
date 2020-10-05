@@ -28,7 +28,7 @@ pip install colored
 
 ## Usage
 
-And you just need to replace the playlist url and open.
+You just need to replace the playlist url and open.
 
 ```python
 
@@ -40,7 +40,7 @@ playlist = pafy.get_playlist(url) # Extracts the playlist information
 ...
 
 ```
-To next the music press the key "Page Up" from your keyboard.
+For the next song press the "Page Up" key on your keyboard.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
