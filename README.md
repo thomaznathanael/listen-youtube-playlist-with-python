@@ -31,10 +31,14 @@ pip install colored
 And you just need to replace the playlist url and open.
 
 ```python
+
 ...
-url = "https://www.youtube.com/watch?v=EiXFGW75D-8&list=PL0GC85adzsKqVFXGKntt-KB5dHskW5Gp7"
-playlist = pafy.get_playlist(url) # Extrai as informações da playlist em formato de dicionário
+
+url = "PUT_YOUR_YOUTUBE_PLAYLIST_URL_HERE"
+playlist = pafy.get_playlist(url) # Extracts the playlist information
+
 ...
+
 ```
 To next the music press the key "Page Up" from your keyboard.
 
