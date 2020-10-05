@@ -7,7 +7,7 @@ cyan = fg('cyan')
 red = fg('red')
 res = attr('reset')
 
-url = "https://www.youtube.com/watch?v=duZR6GLM8Es&list=RDVFp_Y0kz6CY&index=7"
+url = "PUT_YOUR_YOUTUBE_PLAYLIST_URL_HERE"
 playlist = pafy.get_playlist(url) # Extracts playlist information
 
 for music in playlist['items']:
