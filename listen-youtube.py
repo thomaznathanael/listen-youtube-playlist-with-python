@@ -1,5 +1,5 @@
-import pafy # o pafy depende da biblioteca youtube_dl
-import vlc  # python-vlc
+import pafy
+import vlc
 from time import sleep
 import keyboard
 from colored import attr, fg
@@ -8,17 +8,17 @@ red = fg('red')
 res = attr('reset')
 
 url = "https://www.youtube.com/watch?v=duZR6GLM8Es&list=RDVFp_Y0kz6CY&index=7"
-playlist = pafy.get_playlist(url) # Extrai as informações da playlist em formato de dicionário
+playlist = pafy.get_playlist(url) # Extracts playlist information
 
 for musica in playlist['items']:
     url_video = "https://www.youtube.com/watch?v=" + musica['playlist_meta']['encrypted_id'] # Extrai o link de cada vídeo da playlist
     video = pafy.new(url_video)
-    audio = video.getbestaudio() # Extrai apenas o áudio de cada vídeo
+    audio = video.getbestaudio() # Extracts only the audio from the videos
     playurl = audio.url
 
     print(musica['playlist_meta']['title'] + f' - {red}' + musica['playlist_meta']['duration'] + f'{res}')
 
-    # Abaixo temos a reprodução de mídia padrão da biblioteca python-vlc
+    # Below is the standard media reproduction of the python-vlc library
     Instance = vlc.Instance()
     player = Instance.media_player_new()
     Media = Instance.media_new(playurl)
@@ -27,7 +27,7 @@ for musica in playlist['items']:
     player.play()
     sleep(3)
     while player.is_playing():
-        key = keyboard.read_key() # Detecta a tecla pressionada
+        key = keyboard.read_key() # Detects the pressed key
         if key == 'page up':
             print(f'{cyan}-next{res}')
             break
