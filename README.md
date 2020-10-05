@@ -1,23 +1,47 @@
 # Listen-youtube-playlist-with-python
 This is an example of how to listen music from a youtube playlist.
 
-First install the dependences..
+## Installation
+
+Install the all dependencies
 
 The dependency of pafy:
-$pip install youtube_dl
-
+```bash
+pip install youtube_dl
+```
 The pafy module:
-$pip install pafy
-
+```bash
+pip install pafy
+```
 The vlc module:
-$pip install python-vlc
-
+```bash
+pip install python-vlc
+```
 The keyboard module for keys detection:
-$pip install keyboard
-
+```bash
+pip install keyboard
+```
 The colored module:
-$pip install colored
+```bash
+pip install colored
+```
 
-And you just need to replace the url(playlist) and open.
+## Usage
 
+And you just need to replace the playlist url and open.
+
+```python
+...
+url = "https://www.youtube.com/watch?v=EiXFGW75D-8&list=PL0GC85adzsKqVFXGKntt-KB5dHskW5Gp7"
+playlist = pafy.get_playlist(url) # Extrai as informações da playlist em formato de dicionário
+...
+```
 To next the music press the key "Page Up" from your keyboard.
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
