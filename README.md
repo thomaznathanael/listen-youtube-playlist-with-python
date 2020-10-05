@@ -1,4 +1,12 @@
 # Listen Youtube Playlist With Python
+
+![Python](https://img.shields.io/pypi/pyversions/Eel?style=for-the-badge)
+[![License](https://img.shields.io/pypi/l/Eel.svg?style=for-the-badge)](https://choosealicense.com/licenses/mit/)
+
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/thomaznathanael/Listen-youtube-playlist-with-python.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/thomaznathanael/Listen-youtube-playlist-with-python/alerts/)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/thomaznathanael/Listen-youtube-playlist-with-python.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/thomaznathanael/Listen-youtube-playlist-with-python/context:python)
+
+
 This is an example of how to listen music from a youtube playlist.
 
 ## Installation
