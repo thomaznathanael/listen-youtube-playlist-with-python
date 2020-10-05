@@ -10,13 +10,13 @@ res = attr('reset')
 url = "https://www.youtube.com/watch?v=duZR6GLM8Es&list=RDVFp_Y0kz6CY&index=7"
 playlist = pafy.get_playlist(url) # Extracts playlist information
 
-for musica in playlist['items']:
-    url_video = "https://www.youtube.com/watch?v=" + musica['playlist_meta']['encrypted_id'] # Extrai o link de cada vídeo da playlist
+for music in playlist['items']:
+    url_video = "https://www.youtube.com/watch?v=" + music['playlist_meta']['encrypted_id'] # Extrai o link de cada vídeo da playlist
     video = pafy.new(url_video)
     audio = video.getbestaudio() # Extracts only the audio from the videos
     playurl = audio.url
 
-    print(musica['playlist_meta']['title'] + f' - {red}' + musica['playlist_meta']['duration'] + f'{res}')
+    print(music['playlist_meta']['title'] + f' - {red}' + music['playlist_meta']['duration'] + f'{res}')
 
     # Below is the standard media reproduction of the python-vlc library
     Instance = vlc.Instance()
