@@ -9,6 +9,8 @@ res = attr('reset')
 black = fg('black')
 bg_y = bg('yellow')
 
+url = "PUT_YOUR_YOUTUBE_PLAYLIST_URL_HERE"
+
 def playlist_(playlist):
     print(f'{bg_y}{black} Playlist {res}')
     for music in playlist['items']:
@@ -54,8 +56,6 @@ def only_one(url_video):
     while player.is_playing():
         pass
     player.stop()
-
-url = "https://www.youtube.com/watch?v=8SbUC-UaAxE&list=PLIS6Lred47C5-DpMjKxZI0UqodeZc4bKS"
 
 if 'list' in url:
     try:
