@@ -15,7 +15,7 @@ d = 0
 
 url = "PUT_YOUR_YOUTUBE_PLAYLIST_URL_HERE"
 
-def contador():
+def detect_key():
     global key
     global d
 
@@ -24,7 +24,7 @@ def contador():
         key = keyboard.read_key() # Detects the pressed key
         
 
-t = threading.Thread(target=contador)
+t = threading.Thread(target=detect_key)
 t.start()
 
 
