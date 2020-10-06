@@ -23,7 +23,7 @@ or
 pip3 install -r requirements.txt
 ```
 
-######And install the VLC App in your device.
+##### And install the VLC App in your device.
 
 ## Usage
 
