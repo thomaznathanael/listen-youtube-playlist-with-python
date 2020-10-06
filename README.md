@@ -5,7 +5,7 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/thomaznathanael/Listen-youtube-playlist-with-python/total?style=for-the-badge)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)
 
-[![Total alerts](![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://lgtm.com/projects/g/thomaznathanael/Listen-youtube-playlist-with-python/alerts/)
+[![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://lgtm.com/projects/g/thomaznathanael/Listen-youtube-playlist-with-python/alerts/)
 [![LGTM Grade](https://img.shields.io/lgtm/grade/python/github/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://lgtm.com/projects/g/thomaznathanael/Listen-youtube-playlist-with-python/context:python)
 
 
