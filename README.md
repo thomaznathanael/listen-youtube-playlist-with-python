@@ -2,11 +2,11 @@
 
 [![Python](https://img.shields.io/pypi/pyversions/Eel?style=for-the-badge)](https://www.python.org/)
 [![License](https://img.shields.io/github/license/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://github.com/thomaznathanael/Listen-youtube-playlist-with-python/blob/main/LICENSE)
-[![GitHub All Releases](https://img.shields.io/github/downloads/thomaznathanael/Listen-youtube-playlist-with-python/total?style=for-the-badge)](https://github.com/thomaznathanael/Listen-youtube-playlist-with-python/releases)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)
+![Downloads](https://img.shields.io/github/downloads/thomaznathanael/Listen-youtube-playlist-with-python/total?style=for-the-badge)
+[![Releases](https://img.shields.io/github/v/release/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://github.com/thomaznathanael/Listen-youtube-playlist-with-python/releases)
 
-[![LGTM Alerts](https://img.shields.io/lgtm/alerts/github/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://lgtm.com/projects/g/thomaznathanael/Listen-youtube-playlist-with-python/alerts/)
-[![LGTM Grade](https://img.shields.io/lgtm/grade/python/github/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://lgtm.com/projects/g/thomaznathanael/Listen-youtube-playlist-with-python/context:python)
+[![Alerts](https://img.shields.io/lgtm/alerts/github/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://lgtm.com/projects/g/thomaznathanael/Listen-youtube-playlist-with-python/alerts/)
+[![Quality](https://img.shields.io/lgtm/grade/python/github/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://lgtm.com/projects/g/thomaznathanael/Listen-youtube-playlist-with-python/context:python)
 
 
 This is an example of how to listen music from a youtube playlist.
