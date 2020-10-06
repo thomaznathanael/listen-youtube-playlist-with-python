@@ -1,0 +1,5 @@
+pafy==0.5.5
+python-vlc==3.0.11115
+colored==1.4.2
+keyboard==0.13.5
+youtube_dl

@@ -3,28 +3,16 @@ This is an example of how to listen music from a youtube playlist.
 
 ## Installation
 
-Install the all dependencies
+Install the all dependencies:
+```bash
+pip install -r requirements.txt
+```
+ou:
+```bash
+pip3 install -r requirements.txt
+```
 
-The dependency of pafy:
-```bash
-pip install youtube_dl
-```
-The pafy module:
-```bash
-pip install pafy
-```
-The vlc module:
-```bash
-pip install python-vlc
-```
-The keyboard module for keys detection:
-```bash
-pip install keyboard
-```
-The colored module:
-```bash
-pip install colored
-```
+intale o aplicativo VLC no seu sistema também
 
 ## Usage
 
@@ -40,7 +28,7 @@ playlist = pafy.get_playlist(url) # Extracts the playlist information
 ...
 
 ```
-For the next song press the "Page Up" key on your keyboard.
+For the next song press the "Page Up" key on your keyboard ou em caso de falha da biblioteca você terá que apertar enter no terminal.(geralmente acontece no linux)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
