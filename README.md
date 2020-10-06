@@ -12,7 +12,7 @@ ou:
 pip3 install -r requirements.txt
 ```
 
-intale o aplicativo VLC no seu sistema também
+install the vlc app on your system
 
 ## Usage
 
