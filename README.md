@@ -36,6 +36,7 @@ url = "PUT_YOUR_YOUTUBE_PLAYLIST_URL_HERE"
 
 ```
 For the next song press the "Page Up" key on your keyboard.
+
 Some Linux systems do not work well with the keyboard library, so you need to press Enter to play the next song.
 
 ## Contributing
