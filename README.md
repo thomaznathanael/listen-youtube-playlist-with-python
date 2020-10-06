@@ -23,6 +23,8 @@ or
 pip3 install -r requirements.txt
 ```
 
+And install the VLC App in your device.
+
 ## Usage
 
 You just need to replace the playlist url and open.
