@@ -19,7 +19,7 @@ def playlist_(playlist):
         audio = video.getbestaudio() # Extracts only the audio from the videos
         playurl = audio.url
 
-        print(music['playlist_meta']['title'] + f' - {red}' + music['playlist_meta']['duration'] + f'{res}')
+        print(video.title + f' - {red}' + video.duration + f'{res}')
 
         # Below is the standard media reproduction of the python-vlc library
         Instance = vlc.Instance()
@@ -30,8 +30,13 @@ def playlist_(playlist):
         player.play()
         sleep(3)
         while player.is_playing():
-            key = keyboard.read_key() # Detects the pressed key
-            if key == 'page up':
+            try:   
+                key = keyboard.read_key() # Detects the pressed key
+                if key == 'page up':
+                    print(f'{cyan}-next{res}')
+                    break
+            except:
+                input('Please press Enter to next song') # Some linux systems not work well with the Keyboard library
                 print(f'{cyan}-next{res}')
                 break
         player.stop()
@@ -43,7 +48,7 @@ def only_one(url_video):
     playurl = audio.url
     print(f'{bg_y}{black} Single {res}')
 
-    #print(music['playlist_meta']['title'] + f' - {red}' + music['playlist_meta']['duration'] + f'{res}')
+    print(video.title + f' - {red}' + video.duration + f'{res}')
 
     # Below is the standard media reproduction of the python-vlc library
     Instance = vlc.Instance()
@@ -67,5 +72,4 @@ else:
         only_one(url)  # Call the one song function
     except:
         print('The url is not right')
-
     
