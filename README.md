@@ -13,25 +13,13 @@ This is an example of how to listen music from a youtube playlist.
 
 Install the all dependencies
 
-The dependency of pafy:
+Execute the follow command on terminal:
 ```bash
-pip install youtube_dl
+pip install -r requirements.txt
 ```
-The pafy module:
+or
 ```bash
-pip install pafy
-```
-The vlc module:
-```bash
-pip install python-vlc
-```
-The keyboard module for keys detection:
-```bash
-pip install keyboard
-```
-The colored module:
-```bash
-pip install colored
+pip3 install -r requirements.txt
 ```
 
 ## Usage
@@ -43,7 +31,6 @@ You just need to replace the playlist url and open.
 ...
 
 url = "PUT_YOUR_YOUTUBE_PLAYLIST_URL_HERE"
-playlist = pafy.get_playlist(url) # Extracts the playlist information
 
 ...
 
