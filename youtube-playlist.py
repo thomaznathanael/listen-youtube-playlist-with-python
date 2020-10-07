@@ -109,11 +109,11 @@ def only_one(url_video):
 if 'list' in url:
     try:
         playlist_(pafy.get_playlist(url)) # Extracts playlist information and call the playlist function
-    except:
+    except(ValueError):
         print('The url is not right')
 else:
     try:
         only_one(url)  # Call the one song function
-    except:
+    except(ValueError):
         print('The url is not right')
     
