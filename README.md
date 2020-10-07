@@ -1,6 +1,6 @@
 # Listen Youtube Playlist With Python
 
-[![Python](https://img.shields.io/pypi/pyversions/Eel?style=for-the-badge)](https://www.python.org/)
+[![Python](https://img.shields.io/pypi/pyversions/Eel?style=for-the-badge&logo=python)](https://www.python.org/)
 [![License](https://img.shields.io/github/license/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://github.com/thomaznathanael/Listen-youtube-playlist-with-python/blob/main/LICENSE)
 [![Releases](https://img.shields.io/github/v/release/thomaznathanael/Listen-youtube-playlist-with-python?style=for-the-badge)](https://github.com/thomaznathanael/Listen-youtube-playlist-with-python/releases)
 
