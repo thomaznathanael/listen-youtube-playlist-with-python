@@ -50,11 +50,11 @@ def playlist_(playlist):
         player.play()
         timer = 3
         if d == 1:   
-            print(str(timedelta(seconds=0)))
+            print('\r'+str(timedelta(seconds=0)), end='')
             sleep(1)
-            print(str(timedelta(seconds=1)))
+            print('\r'+str(timedelta(seconds=1)), end='')
             sleep(1)
-            print(str(timedelta(seconds=2)))
+            print('\r'+str(timedelta(seconds=2)), end='')
             sleep(1)
         else:
             sleep(3)
@@ -62,16 +62,16 @@ def playlist_(playlist):
         key = ''
         while player.is_playing() and timer < video.length:
             if d == 1:
-                print(str(timedelta(seconds=timer)))
+                print('\r'+str(timedelta(seconds=timer)), end='')
             timer +=1
             sleep(1)
  
             if key == 'page up':
-                print(f'{cyan}-next{res}')
+                print(f'\r{cyan}-next    {res}')
                 break
             if d == 0:
                 input('Please press Enter to next song')
-                print(f'{cyan}-next{res}')  
+                print(f'\r{cyan}-next    {res}')
                 break
         player.stop()
 
@@ -93,15 +93,15 @@ def only_one(url_video):
     player.play()
 
     timer = 3
-    print(str(timedelta(seconds=0)))
+    print('\r'+str(timedelta(seconds=0)), end='')
     sleep(1)
-    print(str(timedelta(seconds=1)))
+    print('\r'+str(timedelta(seconds=1)), end='')
     sleep(1)
-    print(str(timedelta(seconds=2)))
+    print('\r'+str(timedelta(seconds=2)), end='')
     sleep(1)
     
     while player.is_playing():
-        print(str(timedelta(seconds=timer)))
+        print('\r'+str(timedelta(seconds=timer)), end='')
         timer +=1
         sleep(1)
     player.stop()
