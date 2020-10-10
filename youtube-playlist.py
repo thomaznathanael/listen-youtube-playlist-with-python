@@ -42,7 +42,7 @@ def playlist_(playlist):
         try:
             video = pafy.new(url_video)
         except(IOError):
-            print('Erro ao reproduzir.')
+            print('There was an error playing this song')
             print(f'{cyan}-next         {res}') 
             continue
 
