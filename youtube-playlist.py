@@ -11,18 +11,17 @@ red = fg('red')
 res = attr('reset')
 black = fg('black')
 bg_y = bg('yellow')
-d = 0
 
 url = "PUT_YOUR_YOUTUBE_PLAYLIST_URL_HERE"
 
 def detect_key():
     global key
-    global d
-
     while True:
-        d = 1
-        key = keyboard.read_key() # Detects the pressed key
-        
+        try:
+            key = keyboard.read_key() # Detects the pressed key
+        except(BaseException):
+            break
+
 
 t = threading.Thread(target=detect_key)
 t.start()
@@ -30,36 +29,54 @@ t.start()
 
 def playlist_(playlist):
     global key
-    global d
+    d = 1
+    try:
+        keyboard.read_key()
+    except(BaseException):
+        d=0
+
     print(f'{bg_y}{black} Playlist {res}')
     for music in playlist['items']:
         
         url_video = music['playlist_meta']['encrypted_id'] # Extracts the url from the videos
-        video = pafy.new(url_video)
+        try:
+            video = pafy.new(url_video)
+        except(IOError):
+            print('Erro ao reproduzir.')
+            print(f'{cyan}-next         {res}') 
+            continue
+
         audio = video.getbestaudio() # Extracts only the audio from the videos
         playurl = audio.url
 
-        print(video.title + f' - {red}' + video.duration + f'{res}')
+        print('\r'+video.title + f' - {red}' + video.duration + f'{res}')
 
         # Below is the standard media reproduction of the python-vlc library
-        Instance = vlc.Instance()
+        opt = "--quiet"
+        Instance = vlc.Instance(opt)
         player = Instance.media_player_new()
         Media = Instance.media_new(playurl)
         Media.get_mrl()
         player.set_media(Media)
         player.play()
-        timer = 3
-        if d == 1:   
-            print('\r'+str(timedelta(seconds=0)), end='')
-            sleep(1)
-            print('\r'+str(timedelta(seconds=1)), end='')
-            sleep(1)
-            print('\r'+str(timedelta(seconds=2)), end='')
-            sleep(1)
+        timer = 5
+        key = ''
+        if d == 1:
+            for s in range(5):   
+                print('\r'+str(timedelta(seconds=s)), end='')
+                if key == 'page up':
+                    break
+                sleep(1)
+
+            if key == 'page up':
+                print(f'\r{cyan}-next         {res}')
+                player.stop()
+                continue
+                
         else:
             sleep(3)
         
-        key = ''
+        
         while player.is_playing() and timer < video.length:
             if d == 1:
                 print('\r'+str(timedelta(seconds=timer)), end='')
@@ -67,11 +84,11 @@ def playlist_(playlist):
             sleep(1)
  
             if key == 'page up':
-                print(f'\r{cyan}-next    {res}')
+                print(f'\r{cyan}-next         {res}')
                 break
             if d == 0:
                 input('Please press Enter to next song')
-                print(f'\r{cyan}-next    {res}')
+                print(f'\r{cyan}-next         {res}')  
                 break
         player.stop()
 
@@ -82,23 +99,22 @@ def only_one(url_video):
     playurl = audio.url
     print(f'{bg_y}{black} Single {res}')
 
-    print(video.title + f' - {red}' + video.duration + f'{res}')
+    print('\n\r'+video.title + f' - {red}' + video.duration + f'{res}')
 
     # Below is the standard media reproduction of the python-vlc library
-    Instance = vlc.Instance()
+    opt = "--quiet"
+    Instance = vlc.Instance(opt)
     player = Instance.media_player_new()
     Media = Instance.media_new(playurl)
     Media.get_mrl()
     player.set_media(Media)
     player.play()
 
-    timer = 3
-    print('\r'+str(timedelta(seconds=0)), end='')
-    sleep(1)
-    print('\r'+str(timedelta(seconds=1)), end='')
-    sleep(1)
-    print('\r'+str(timedelta(seconds=2)), end='')
-    sleep(1)
+    timer = 5
+    
+    for s in range(5):   
+        print('\r'+str(timedelta(seconds=s)), end='')
+        sleep(1)
     
     while player.is_playing():
         print('\r'+str(timedelta(seconds=timer)), end='')
