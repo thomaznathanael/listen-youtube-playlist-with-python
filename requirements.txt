@@ -1,6 +1,6 @@
 pafy==0.5.5
 python-vlc==3.0.11115
 colored==1.4.2
-keyboard==0.13.5
+pynput==1.7.1
 youtube_dl
 threaded==4.0.8
