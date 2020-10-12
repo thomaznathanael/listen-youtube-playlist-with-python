@@ -60,9 +60,7 @@ def playlist_(playlist):
 
         for s in range(5):   
             print('\r'+str(timedelta(seconds=s)), end='')
-            if key == 'Key.page_up':
-                break
-            if key == 'Key.page_down':
+            if key == 'Key.page_up' or key == 'Key.page_down':
                 break
             sleep(1)
 
