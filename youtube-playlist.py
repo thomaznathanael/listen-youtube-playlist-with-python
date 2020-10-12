@@ -1,7 +1,7 @@
 import pafy
 import vlc
 from time import sleep
-import keyboard
+from pynput import keyboard
 from datetime import timedelta
 import threading
 from colored import attr, fg, bg
@@ -14,26 +14,22 @@ bg_y = bg('yellow')
 
 url = "PUT_YOUR_YOUTUBE_PLAYLIST_URL_HERE"
 
-def detect_key():
+def on_press(k):
     global key
-    while True:
-        try:
-            key = keyboard.read_key() # Detects the pressed key
-        except(BaseException):
-            break
+    key = str(k)
 
 
-t = threading.Thread(target=detect_key)
+def listen_key():
+    with keyboard.Listener(on_press=on_press) as listener:
+        listener.join()
+
+
+t = threading.Thread(target=listen_key)
 t.start()
 
 
 def playlist_(playlist):
     global key
-    d = 1
-    try:
-        keyboard.read_key()
-    except(BaseException):
-        d=0
 
     print(f'{bg_y}{black} Playlist {res}')
     for music in playlist['items']:
@@ -52,8 +48,7 @@ def playlist_(playlist):
         print('\r'+video.title + f' - {red}' + video.duration + f'{res}')
 
         # Below is the standard media reproduction of the python-vlc library
-        opt = "--quiet"
-        Instance = vlc.Instance(opt)
+        Instance = vlc.Instance("--quiet")
         player = Instance.media_player_new()
         Media = Instance.media_new(playurl)
         Media.get_mrl()
@@ -61,34 +56,25 @@ def playlist_(playlist):
         player.play()
         timer = 5
         key = ''
-        if d == 1:
-            for s in range(5):   
-                print('\r'+str(timedelta(seconds=s)), end='')
-                if key == 'page up':
-                    break
-                sleep(1)
 
-            if key == 'page up':
-                print(f'\r{cyan}-next         {res}')
-                player.stop()
-                continue
-                
-        else:
-            sleep(3)
-        
+        for s in range(5):   
+            print('\r'+str(timedelta(seconds=s)), end='')
+            if key == 'Key.page_up':
+                break
+            sleep(1)
+
+        if key == 'Key.page_up':
+            print(f'\r{cyan}-next         {res}')
+            player.stop()
+            continue
         
         while player.is_playing() and timer < video.length:
-            if d == 1:
-                print('\r'+str(timedelta(seconds=timer)), end='')
+            print('\r'+str(timedelta(seconds=timer)), end='')
             timer +=1
             sleep(1)
  
-            if key == 'page up':
+            if key == 'Key.page_up':
                 print(f'\r{cyan}-next         {res}')
-                break
-            if d == 0:
-                input('Please press Enter to next song')
-                print(f'\r{cyan}-next         {res}')  
                 break
         player.stop()
 
@@ -102,14 +88,12 @@ def only_one(url_video):
     print('\n\r'+video.title + f' - {red}' + video.duration + f'{res}')
 
     # Below is the standard media reproduction of the python-vlc library
-    opt = "--quiet"
-    Instance = vlc.Instance(opt)
+    Instance = vlc.Instance("--quiet")
     player = Instance.media_player_new()
     Media = Instance.media_new(playurl)
     Media.get_mrl()
     player.set_media(Media)
     player.play()
-
     timer = 5
     
     for s in range(5):   
@@ -121,6 +105,7 @@ def only_one(url_video):
         timer +=1
         sleep(1)
     player.stop()
+
 
 if 'list' in url:
     try:
