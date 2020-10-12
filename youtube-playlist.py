@@ -32,13 +32,13 @@ def playlist_(playlist):
     global key
 
     print(f'{bg_y}{black} Playlist {res}')
-    for music in playlist['items']:
-        
-        url_video = music['playlist_meta']['encrypted_id'] # Extracts the url from the videos
+    v=0
+    while True:     
+        url_video = playlist['items'][v]['playlist_meta']['encrypted_id'] # Extracts the url from the videos
         try:
             video = pafy.new(url_video)
         except(IOError):
-            print('There was an error playing this song')
+            print('There was an error playing this song (Youtube Error)')
             print(f'{cyan}-next         {res}') 
             continue
 
@@ -61,10 +61,19 @@ def playlist_(playlist):
             print('\r'+str(timedelta(seconds=s)), end='')
             if key == 'Key.page_up':
                 break
+            if key == 'Key.page_down':
+                break
             sleep(1)
 
         if key == 'Key.page_up':
             print(f'\r{cyan}-next         {res}')
+            v+=1
+            player.stop()
+            continue
+
+        if key == 'Key.page_down':
+            print(f'\r{cyan}-prev         {res}')
+            v-=1
             player.stop()
             continue
         
@@ -75,6 +84,11 @@ def playlist_(playlist):
  
             if key == 'Key.page_up':
                 print(f'\r{cyan}-next         {res}')
+                v+=1
+                break
+            if key == 'Key.page_down':
+                print(f'\r{cyan}-prev         {res}')
+                v-=1
                 break
         player.stop()
 
