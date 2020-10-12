@@ -40,10 +40,6 @@ url = "PUT_YOUR_YOUTUBE_PLAYLIST_URL_HERE"
 ```
 For the next song press the "Page Up" key on your keyboard.
 
-#### The Keyboard library uses root authentication to work fine.
-
-If you're using a linux system and do not want to use root authentication you may use the Enter to go to next song.
-
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
