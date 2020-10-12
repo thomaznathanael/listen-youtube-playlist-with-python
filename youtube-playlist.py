@@ -39,7 +39,8 @@ def playlist_(playlist):
             video = pafy.new(url_video)
         except(IOError):
             print('There was an error playing this song (Youtube Error)')
-            print(f'{cyan}-next         {res}') 
+            print(f'{cyan}-next         {res}')
+            v+=1 
             continue
 
         audio = video.getbestaudio() # Extracts only the audio from the videos
@@ -84,12 +85,12 @@ def playlist_(playlist):
  
             if key == 'Key.page_up':
                 print(f'\r{cyan}-next         {res}')
-                v+=1
                 break
             if key == 'Key.page_down':
                 print(f'\r{cyan}-prev         {res}')
-                v-=1
+                v-=2
                 break
+        v+=1
         player.stop()
 
 
